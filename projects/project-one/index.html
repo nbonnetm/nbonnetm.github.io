@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- UPDATE: Change this to your project title -->
+  <title>"Curioso" Belt Buckle — Nico's Portfolio</title>
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="../../index.html" class="nav-logo">Nico's Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Work</a></li>
+        <li><a href="../../about.html">About</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <a href="../../index.html" class="back-link">All Projects</a>
+
+      <!-- =============================================
+           HERO
+           UPDATE: mono label, h1, and meta fields
+           ============================================= -->
+      <section class="project-hero">
+        <p class="mono">Industrial Design · Fabrication</p>  <!-- UPDATE: project categories -->
+        <h1>"Curioso" Belt Buckle</h1>                      <!-- UPDATE: project title -->
+
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Year</span>
+            <span class="meta-value">2022</span>              <!-- UPDATE -->
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Role</span>
+            <span class="meta-value">Designer · Fabricator</span> <!-- UPDATE -->
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Materials</span>
+            <span class="meta-value">Bronze, Rhodium Plating, Brass Rivets</span> <!-- UPDATE or remove -->
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Tools</span>
+            <span class="meta-value">SolidWorks, FDM 3D Printing, Silicone Molding, Wax Injection</span> <!-- UPDATE or remove -->
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           OVERVIEW
+           UPDATE: description paragraph and tags
+           ============================================= -->
+      <section class="project-overview">
+        <div class="overview-text">
+          <p>
+            Riffing off of an existing buckle mechanism while implementing a visually intruguing form.
+            Facial form was derived from the functional form of a "Cobra" style buckle mechanism. This project serves as
+            an initial prototype for a design intended for larger-scale production. This version was produced using cast metal. 
+
+          </p>
+        </div>
+        <div class="overview-tags">
+          <!-- UPDATE: add/remove tags as needed -->
+          <span class="tag">Industrial Design</span>
+          <span class="tag">Fabrication</span>
+          <span class="tag">Mechanism Design</span>
+        </div>
+      </section>
+
+      <!-- =============================================
+           PROCESS NODE DIAGRAM
+           HOW TO EDIT:
+           - Each object in the `nodes` array is one
+             step in your process.
+           - `label` appears on the node itself (keep short).
+           - `title` appears in the detail panel below.
+           - `body` is the expanded description.
+           - Add or remove objects freely; the diagram
+             will rebuild automatically.
+           ============================================= -->
+      <section class="process-section">
+        <div class="section-header">
+          <h2>Process</h2>
+          <span class="mono">Select a step to expand</span>
+        </div>
+
+        <div class="node-diagram-wrapper">
+          <div class="node-diagram" id="node-diagram">
+            <!-- Built by JS below -->
+          </div>
+        </div>
+
+        <div class="node-detail-panel" id="detail-panel">
+          <p class="detail-step" id="detail-step">Step 01</p>
+          <h3 class="detail-title" id="detail-title">Step Title</h3>
+          <p class="detail-body" id="detail-body">Step description.</p>
+        </div>
+      </section>
+
+      <!-- =============================================
+           IMAGE GALLERY
+           To add images: replace the .gallery-item divs
+           with <img> tags inside them, e.g.:
+             <div class="gallery-item">
+               <img src="images/photo.jpg" alt="Description" />
+             </div>
+           ============================================= -->
+      <section>
+        <div class="section-header">
+          <h2>Documentation</h2>
+        </div>
+        <div class="image-gallery">
+          <div class="gallery-item">
+            <img src="images/final-trnsp.png" alt="Photo of original belt buckle" />
+          </div>
+          <div class="gallery-item">Image</div>
+          <div class="gallery-item">Image</div>
+          <div class="gallery-item">Image</div>
+          <div class="gallery-item">Image</div>
+          <div class="gallery-item">Image</div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           OUTCOMES / REFLECTION (optional section)
+           UPDATE or delete this section as needed
+           ============================================= -->
+      <section style="padding: var(--space-xl) 0 var(--space-2xl);">
+        <div class="section-header">
+          <h2>Outcomes</h2>
+        </div>
+        <p style="max-width: 640px; line-height: 1.8; color: var(--color-muted); font-size: 0.95rem;">
+          Describe the results, what you learned, what you would do differently,
+          or where the project could go next. This section grounds the process
+          documentation in reflection and gives viewers a sense of your thinking.
+        </p>
+      </section>
+
+    </div><!-- /container -->
+  </div><!-- /page-content -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-left">© 2025 Nico's Portfolio</p>
+      <div class="footer-links">
+        <a href="mailto:you@email.com">Email</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/nbonnetm" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =============================================
+    // PROCESS NODES — edit this array to define
+    // the steps in your project process.
+    // =============================================
+    const nodes = [
+      {
+        label:  "Research",
+        title:  "Research & Discovery",
+        body:   "Describe what the research phase involved — user studies, literature review, competitive analysis, site visits, interviews, or precedent research. What questions were you trying to answer?"
+      },
+      {
+        label:  "Define",
+        title:  "Problem Definition",
+        body:   "How did you synthesize your research into a clear problem statement or design brief? What constraints, requirements, or opportunities shaped the direction?"
+      },
+      {
+        label:  "Ideate",
+        title:  "Ideation",
+        body:   "Describe your ideation process — sketching, brainstorming, concept generation. How many directions did you explore, and how did you narrow them down?"
+      },
+      {
+        label:  "Prototype",
+        title:  "Prototyping",
+        body:   "What prototyping methods did you use? (Foam models, 3D printing, CAD, breadboards, etc.) What were you trying to test or validate at each fidelity level?"
+      },
+      {
+        label:  "Test",
+        title:  "Testing & Iteration",
+        body:   "How did you evaluate your prototypes? What feedback did you gather, and what changed as a result? Describe any key pivots in the design."
+      },
+      {
+        label:  "Deliver",
+        title:  "Final Outcome",
+        body:   "What was the final deliverable? Describe the resolved design — its key features, the fabrication or implementation process, and how it addresses the original brief."
+      }
+    ];
+    // =============================================
+    // END OF EDITABLE SECTION
+    // (diagram builds automatically from above)
+    // =============================================
+
+    const diagram   = document.getElementById('node-diagram');
+    const panel     = document.getElementById('detail-panel');
+    const detailStep  = document.getElementById('detail-step');
+    const detailTitle = document.getElementById('detail-title');
+    const detailBody  = document.getElementById('detail-body');
+
+    let activeIndex = null;
+
+    function buildDiagram() {
+      diagram.innerHTML = '';
+      nodes.forEach((node, i) => {
+        // Connector arrow (not before first node)
+        if (i > 0) {
+          const connector = document.createElement('div');
+          connector.className = 'node-connector';
+          connector.id = `edge-${i}`;
+          connector.innerHTML = '<div class="edge-line"></div>';
+          diagram.appendChild(connector);
+        }
+
+        // Node column (allows for future branching)
+        const col = document.createElement('div');
+        col.className = 'node-column';
+
+        const nodeEl = document.createElement('div');
+        nodeEl.className = 'node';
+        nodeEl.dataset.index = i;
+        nodeEl.innerHTML = `
+          <span class="node-number">0${i + 1}</span>
+          <span class="node-label">${node.label}</span>
+        `;
+
+        nodeEl.addEventListener('click', () => toggleNode(i));
+        col.appendChild(nodeEl);
+        diagram.appendChild(col);
+      });
+    }
+
+    function toggleNode(index) {
+      const nodeEls = diagram.querySelectorAll('.node');
+      const edgeEls = diagram.querySelectorAll('.node-connector');
+
+      if (activeIndex === index) {
+        // Deselect
+        nodeEls[index].classList.remove('active');
+        panel.classList.remove('visible');
+        activeIndex = null;
+        // Reset all edges
+        edgeEls.forEach(e => e.classList.remove('active'));
+      } else {
+        // Deactivate previous
+        if (activeIndex !== null) nodeEls[activeIndex].classList.remove('active');
+        // Activate new
+        nodeEls[index].classList.add('active');
+        activeIndex = index;
+
+        // Highlight edges up to this node
+        edgeEls.forEach((e, i) => {
+          // edges are indexed 1-based (edge-1 is between node 0 and 1)
+          e.classList.toggle('active', i < index);
+        });
+
+        // Update detail panel
+        const step = nodes[index];
+        detailStep.textContent  = `Step 0${index + 1}`;
+        detailTitle.textContent = step.title;
+        detailBody.textContent  = step.body;
+        panel.classList.add('visible');
+
+        // Scroll panel into view smoothly
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    buildDiagram();
+  </script>
+
+</body>
+</html>
