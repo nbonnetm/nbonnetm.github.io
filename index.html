@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nico's Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-logo">Nico's Portfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- HERO -->
+    <section style="padding: var(--space-2xl) 0 var(--space-xl);">
+      <div class="container">
+        <p class="mono" style="margin-bottom: var(--space-md);">Industrial Design · Fabrication · Biomedical Engineering</p>
+        <h1 style="max-width: 720px;">
+          Work at the intersection of ergonomics, aesthetic, and function.
+        </h1>
+      </div>
+    </section>
+
+    <!-- FILTER + GRID -->
+    <section style="padding-bottom: var(--space-2xl);">
+      <div class="container">
+
+        <div class="filter-bar">
+          <span class="mono">Filter by</span>
+          <button class="tag active" data-filter="all">All</button>
+          <button class="tag" data-filter="industrial-design">Industrial Design</button>
+          <button class="tag" data-filter="fabrication">Fabrication</button>
+          <button class="tag" data-filter="biomedical-engineering">Biomedical Engineering</button>
+          <button class="tag" data-filter="ergonomics">Ergonomics</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+
+          <!-- =============================================
+               PROJECT CARD — duplicate this block to add
+               a new project. Update:
+                 - data-tags (space-separated)
+                 - href on the anchor
+                 - card-image-placeholder text (or swap for <img>)
+                 - card-tags .tag labels
+                 - card-title
+                 - card-desc
+               ============================================= -->
+
+          <a href="projects/project-one/index.html"
+             class="project-card"
+             data-tags="industrial-design fabrication ergonomics">
+            <div class="card-image-placeholder">Project Image</div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">Industrial Design</span>
+                <span class="tag">Fabrication</span>
+              </div>
+              <h3 class="card-title">Project One Title</h3>
+              <p class="card-desc">A brief one or two sentence description of the project and what it explores.</p>
+            </div>
+          </a>
+
+          <a href="projects/project-two/index.html"
+             class="project-card"
+             data-tags="biomedical-engineering ergonomics">
+            <div class="card-image-placeholder">Project Image</div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">Biomedical Engineering</span>
+                <span class="tag">Ergonomics</span>
+              </div>
+              <h3 class="card-title">Project Two Title</h3>
+              <p class="card-desc">A brief one or two sentence description of the project and what it explores.</p>
+            </div>
+          </a>
+
+          <a href="projects/project-three/index.html"
+             class="project-card"
+             data-tags="fabrication biomedical-engineering">
+            <div class="card-image-placeholder">Project Image</div>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag">Fabrication</span>
+                <span class="tag">Biomedical Engineering</span>
+              </div>
+              <h3 class="card-title">Project Three Title</h3>
+              <p class="card-desc">A brief one or two sentence description of the project and what it explores.</p>
+            </div>
+          </a>
+
+          <!-- Add more project cards here -->
+
+        </div><!-- /project-grid -->
+
+      </div>
+    </section>
+
+  </div><!-- /page-content -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-left">© 2025 Nico's Portfolio</p>
+      <div class="footer-links">
+        <a href="mailto:you@email.com">Email</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/nbonnetm" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- TAG FILTERING ---
+    const filterButtons = document.querySelectorAll('.filter-bar .tag');
+    const cards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+          const tags = card.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
