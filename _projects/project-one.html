@@ -1,0 +1,104 @@
+---
+# =============================================
+# PROJECT FRONTMATTER
+# Fill in the fields below. The layout handles
+# all the HTML — you only edit this file.
+# =============================================
+
+title: "'Curioso' Belt Buckle"
+year: 2022
+role: "Designer · Fabricator"
+materials: "Bronze, Rhodium Plating, Brass Rivets"       # optional — delete line if not needed
+tools: "SolidWorks, FDM 3D Printing, Silicone Molding, Wax Injection"         # optional — delete line if not needed
+
+# Short summary shown on the homepage card
+summary: "Put a nice summary here."
+
+# Overview paragraph shown at the top of the project page
+overview: "This project explores how the form of a functional mechanism can give rise to visual intrigue through modification. This version serves as
+          an initial prototype for a design intended for larger-scale production."
+
+# Outcomes paragraph shown at the bottom (optional — delete section if not needed)
+outcomes: "Describe the results, what you learned, what you would do differently, or where the project could go next."
+
+# Categories shown in the hero (displayed as "Cat One · Cat Two")
+categories:
+  - Industrial Design
+  - Fabrication
+
+# Tags used for filtering on the homepage
+# Must match the filter button labels in index.html exactly
+tags:
+  - Industrial Design
+  - Fabrication
+  - Ergonomics
+
+# Cover image shown on the homepage card (optional)
+cover: "assets/images/project-one/cover.png"
+
+# Process nodes — each item is one step in the diagram
+# label  : short name on the node (1–2 words)
+# title  : full title in the detail panel
+# body   : description paragraph in the detail panel
+# images : list of image paths (optional — omit if no images for this step)
+nodes:
+  - label: "Research"
+    title: "Research & Discovery"
+    body: "Describe what the research phase involved — user studies, literature review, competitive analysis, site visits, interviews, or precedent research. What questions were you trying to answer?"
+  - label: "Define"
+    title: "Problem Definition"
+    body: "How did you synthesize your research into a clear problem statement or design brief? What constraints, requirements, or opportunities shaped the direction?"
+    images:
+      - "/assets/images/project-one/define-1.png"
+
+  - label: "Ideate"
+    title: "Ideation"
+    body: "Describe your ideation process — sketching, brainstorming, concept generation. How many directions did you explore, and how did you narrow them down?"
+    images:
+      - "/assets/images/project-one/ideation-1.jpg"
+      - "/assets/images/project-one/ideation-2.jpg"
+
+  - label: "Prototype"
+    title: "Prototyping"
+    body: "What prototyping methods did you use? What were you trying to test or validate at each fidelity level?"
+    images:
+      - src: "/assets/images/project-one/prototype-1.png"
+        caption: "3D model of second prototype"
+      - "/assets/images/project-one/prototype-2.jpg"
+      - src: "/assets/images/project-one/prototype-3.png"
+        caption: "High-fidelity 3D print of final model"
+
+  - label: "Test"
+    title: "Testing & Iteration"
+    body: "How did you evaluate your prototypes? What feedback did you gather, and what changed as a result?"
+    images:
+      - "/assets/images/project-one/test-1.jpg"
+      - "/assets/images/project-one/test-2.jpg"
+      - "/assets/images/project-one/test-3.jpg"
+      - "/assets/images/project-one/test-4.jpg"
+
+  - label: "Deliver"
+    title: "Final Outcome"
+    body: "What was the final deliverable? Describe the resolved design, the fabrication process, and how it addresses the original brief."
+    images:
+      - "/assets/images/project-one/final-1.jpg"
+      - "/assets/images/project-one/final-2.jpg"
+
+# Documentation gallery images shown below the process diagram (optional)
+# Delete this section if you don't want a gallery
+gallery:
+  - src: "assets/images/project-one/gallery-1.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-2.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-3.jpg"
+    alt: "Description of image"
+
+---
+
+{%- comment -%}
+Anything written below this line renders in the "custom content" slot
+at the bottom of the project page, after the gallery and outcomes.
+Use this for one-off sections unique to this project.
+Leave it empty if you don't need anything extra.
+{%- endcomment -%}
