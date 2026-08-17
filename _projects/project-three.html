@@ -1,0 +1,101 @@
+---
+# =============================================
+# PROJECT FRONTMATTER
+# Fill in the fields below. The layout handles
+# all the HTML — you only edit this file.
+# =============================================
+
+title: "Optimized Truss"
+year: 2026
+role: "Designer · Fabricator"
+materials: "Acrylic, duct tape"       # optional — delete line if not needed
+tools: "MATLAB"         # optional — delete line if not needed
+
+# Short summary shown on the homepage card
+summary: "Optimizing truss designs via computational analysis"
+
+# Overview paragraph shown at the top of the project page
+overview: "A truss is a simple structure made entirely of simple members whose geometry allows it to support significantly larger external loads than each individual member (think bridges). The goal of this project was work in a group setting to design an optimized truss structure using computational analysis."
+
+# Outcomes paragraph shown at the bottom (optional — delete section if not needed)
+outcomes: "While computational simulations can assist in the design process, they cannot be solely relied on to determine the performance of any given design. Certain factors may not be present in computational modeling that can affect design performance under real-world conditions. Thus, model-making and testing are crucial to engineering safe, efficient systems."
+
+# Categories shown in the hero (displayed as "Cat One · Cat Two")
+categories:
+  - Engineering
+  - Programming
+  - Data analysis
+  - Fabrication
+
+# Tags used for filtering on the homepage
+# Must match the filter button labels in index.html exactly
+tags:
+  - Engineering 
+
+# Cover image shown on the homepage card (optional)
+cover: "assets/images/project-three/final-design.png"
+
+# Process nodes — each item is one step in the diagram
+# label  : short name on the node (1–2 words)
+# title  : full title in the detail panel
+# body   : description paragraph in the detail panel
+# images : list of image paths (optional — omit if no images for this step)
+nodes:
+  - label: "Define"
+    title: "Design Constraints"
+    body: "Design constraints were provided by the assignment. Constraints included the minimum weight the truss would support, a range of appropriate member lengths, requirement of one roller and one pin support, and the location of the weight relative to these supports. "
+
+  - label: "Research"
+    title: "Research"
+    body: "In order to write code that can accurately predict truss failure, we determined the specific conditions under which our construction material would buckle under compression. Individual strips were tested and data was used to construct a mathematical model to determine failure points. "
+    images:
+      - src: "/assets/images/project-three/data-estimation.png"
+        caption: "Best-fit graph and equation based on buckling data"
+
+  - label: "Develop Test Code"
+    title: "Develop Test Code"
+    body: "Since analyzing complex trusses by hand is time consuming, a computer program can be used to simulate forces. I implemented MATLAB code that populated force and relational matrices using natural language through the command-line interface. Numerical analysis of the internal forces are then performed using these matrices, and a “critical member” is identified. "
+    images:
+      - src: "/assets/images/project-three/command-line.png"
+        caption: "Sample command-line interface input prompts"
+      - src: "/assets/images/project-three/output.png"
+        caption: "Sample output for a truss design"
+
+  - label: "Ideation and Optimization"
+    title: "Ideation and Optimization"
+    body: "I began ideating different designs based on existing trusses that could potentially fall within our constraints. These initial configurations were run through our code in order to determine the best geometry for our truss. Once the best general geometry was determined, we modified member lengths and angles until changes no longer returned improvements in truss strength."
+    images:
+      - src: "/assets/images/project-three/candidate-2.png"
+        caption: "Sample candidate truss design"
+      - src: "/assets/images/project-three/final-design.png"
+        caption: "Final optimized truss design"
+
+  - label: "Test"
+    title: "Testing & Iteration"
+    body: "To ensure the efficacy of our code, we tested it against three truss designs that would be solved by hand. Once our code was returning correct numbers for internal tensile forces, I began running our test"
+    images:
+      - src: "/assets/images/project-three/test-1.jpg"
+        caption: "Final design with 500g weight"
+      - src: "/assets/images/project-three/test-2.jpg"
+        caption: "Final design loaded significantly past its maximum"
+
+
+  - label: "Outcome"
+    title: "Final Outcome"
+    body: "Our truss design performed within calculated error margins. Failure occurred at the lower end of predicted load failure range. "
+    images:
+
+
+# Documentation gallery images shown below the process diagram (optional)
+# Delete this section if you don't want a gallery
+gallery:
+ 
+
+---
+
+{%- comment -%}
+Anything written below this line renders in the "custom content" slot
+at the bottom of the project page, after the gallery and outcomes.
+Use this for one-off sections unique to this project.
+Leave it empty if you don't need anything extra.
+{%- endcomment -%}

@@ -1,0 +1,98 @@
+---
+# =============================================
+# PROJECT FRONTMATTER
+# Fill in the fields below. The layout handles
+# all the HTML — you only edit this file.
+# =============================================
+
+title: "Exoglove (ongoing)"
+year: 2026
+role: "Project Lead · Designer · Fabricator"
+materials: "Silicone Rubber, Pneumatic Tubing, Arduino UNO-WIFI microcontroller, (glove fabric material)"       # optional — delete line if not needed
+tools: "PLA 3D printing, OnShape, sewing machine, C++ "         # optional — delete line if not needed
+
+# Short summary shown on the homepage card
+summary: "Soft-robotic glove to assist movement in patients"
+
+# Overview paragraph shown at the top of the project page
+overview: "Led a BU Robotics Club project designing a robotic glove to mechanically assist movement in patients with limited hand mobility. This project specifically focuses on developing a system with soft-bodied pneumatic actuators capable of bending human digits. Ultimately, the glove will react dynamically to sensory input without the need for complicated user-controlled movement."
+
+# Outcomes paragraph shown at the bottom (optional — delete section if not needed)
+outcomes: "Future scope for this project will include the development of a pump system small enough to be mounted on the glove. Different actuator sizes and geometries will be developed for improved comfort, functionality, and aesthetics. Circuit implementation will involve PCB printing and soldering; appropriate wire management will be developed for user safety and comfort. "
+
+# Categories shown in the hero (displayed as "Cat One · Cat Two")
+categories:
+  - Medical Robotics
+  - Ergonomics 
+
+# Tags used for filtering on the homepage
+# Must match the filter button labels in index.html exactly
+tags:
+  - Engineering
+  - Ergonomics
+  - CAD
+
+# Cover image shown on the homepage card (optional)
+cover: "assets/images/project-exo/ideation.png"
+
+# Process nodes — each item is one step in the diagram
+# label  : short name on the node (1–2 words)
+# title  : full title in the detail panel
+# body   : description paragraph in the detail panel
+# images : list of image paths (optional — omit if no images for this step)
+nodes:
+  - label: "Research"
+    title: "Research & Discovery"
+    body: "Patients struggling with limited hand mobility from stroke or injury have been shown to benefit from mechanically-assisted robotic gloves. These devices aid in recovery and returning normal mobility to patients."
+
+  - label: "Define"
+    title: "Problem Definition"
+    body: "Many mechanically-assisted gloves currently exist, but most are made from many rigid, interconnecting parts. This feature raises concerns about user comfort and durability. Existing open-source designs for soft-body pneumatic actuators do not feature environment-responsive controls and rely on external controls via an app or similar."
+
+  - label: "Ideate"
+    title: "Ideation"
+    body: "The original CAD document was passed down and based on an open-source model; I heavily modified the document to streamline the ideation process. Possible sensory systems included gallium capacitive sensors, conductive fabric, and piezoresistive sensors."
+    images:
+      - src: "/assets/images/project-exo/ideation.png"
+        caption: "Original concept illustration"
+
+  - label: "Prototype"
+    title: "Prototyping"
+    body: "The original actuator model was based on an open-source design and was passed down to me by the group. By taking advantage of variable tables and parametric relations, I completely rebuilt the original CAD document to easily generate new iterations. Any changes made to the variable table will result in print-ready models of the actuator itself and its silicone molds."
+    images:
+      - src: "/assets/images/project-exo/prototype-3.png"
+        caption: "CAD master sketch with variable table"
+      - src: "/assets/images/project-exo/prototype-config.png"
+        caption: "New mold generated from variable changes"
+      - src: "/assets/images/project-exo/prototype-1.jpg"
+        caption: "Actuator prototype with modified base"
+      - src: "/assets/images/project-exo/prototype-circuit.jpg"
+        caption: "Early circuit prototype"
+
+  - label: "Test"
+    title: "Testing & Iteration"
+    body: "This project has demanded multiple rounds of iterating and testing. Our software, circuit, and actuators are integrated via a pre-built pneumatic pump controller. This pump system is controlled through input via a Pub/Sub network, which is accessed and controlled by our circuit."
+    images:
+      - src: "/assets/images/project-exo/test-1.jpg"
+        caption: "Pneumatic actuation test"
+      - src: "/assets/images/project-exo/prototype-2.jpg"
+        caption: "Actuator mold prepped for multiple material test"
+
+# Documentation gallery images shown below the process diagram (optional)
+# Delete this section if you don't want a gallery
+gallery:
+  - src: "assets/images/project-exo/gallery-1.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-2.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-3.jpg"
+    alt: "Description of image"
+
+---
+
+{%- comment -%}
+Anything written below this line renders in the "custom content" slot
+at the bottom of the project page, after the gallery and outcomes.
+Use this for one-off sections unique to this project.
+Leave it empty if you don't need anything extra.
+{%- endcomment -%}

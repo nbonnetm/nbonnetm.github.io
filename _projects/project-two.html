@@ -1,0 +1,107 @@
+---
+# =============================================
+# PROJECT FRONTMATTER
+# Fill in the fields below. The layout handles
+# all the HTML — you only edit this file.
+# =============================================
+
+title: "NASA Crew Quarters"
+year: 2023
+role: "Designer · Fabricator"
+materials: "cardboard, foam-core board, Sintra board, 2x4's, (ADD MORE)"       # optional — delete line if not needed
+tools: "SolidWorks, Adobe Illustrator, etc. (ADD MORE)"         # optional — delete line if not needed
+
+# Short summary shown on the homepage card
+summary: "Designing a comfortable stay for astronauts at any distant destination."
+
+# Overview paragraph shown at the top of the project page
+overview: "ADD DESCRIPTIONNN"
+
+# Outcomes paragraph shown at the bottom (optional — delete section if not needed)
+outcomes: "Describe the results, what you learned, what you would do differently, or where the project could go next."
+
+# Categories shown in the hero (displayed as "Cat One · Cat Two")
+categories:
+  - Industrial Design
+  - Fabrication
+
+# Tags used for filtering on the homepage
+# Must match the filter button labels in index.html exactly
+tags:
+  - Industrial Design
+  - Fabrication
+  - Ergonomics
+
+# Cover image shown on the homepage card (optional)
+cover: "assets/images/project-two/cover.jpg"
+
+# Process nodes — each item is one step in the diagram
+# label  : short name on the node (1–2 words)
+# title  : full title in the detail panel
+# body   : description paragraph in the detail panel
+# images : list of image paths (optional — omit if no images for this step)
+nodes:
+  - label: "Research"
+    title: "Research & Discovery"
+    body: "Research began by investigating existing quarters in similar environments. We looked to living accommodations in saturation diving bells, McMurdo station, and van homes as inspiration. We consulted papers on the effects of familiar objects on the psyches of people in isolation. We then designed a survey for current and former residents of McMurdo station. Questions focused on comfort, storage, activities, socialization, and any issues users specifically had with their quarters. "
+  
+  - label: "Define"
+    title: "Problem Definition"
+    body: "How did you synthesize your research into a clear problem statement or design brief? What constraints, requirements, or opportunities shaped the direction?"
+    images:
+      - src: "/assets/images/project-two/data-1.png"
+        caption: "Data1"
+      - src: "/assets/images/project-two/data-2.png"
+        caption: "Data2"
+
+  - label: "Ideate"
+    title: "Ideation"
+    body: "Describe your ideation process — sketching, brainstorming, concept generation. How many directions did you explore, and how did you narrow them down?"
+    images:
+      - "/assets/images/project-one/ideation-1.jpg"
+      - "/assets/images/project-one/ideation-2.jpg"
+
+  - label: "Prototype"
+    title: "Prototyping"
+    body: "What prototyping methods did you use? What were you trying to test or validate at each fidelity level?"
+    images:
+      - src: "/assets/images/project-one/prototype-1.png"
+        caption: "3D model of second prototype"
+      - "/assets/images/project-one/prototype-2.jpg"
+      - src: "/assets/images/project-one/prototype-3.png"
+        caption: "High-fidelity 3D print of final model"
+
+  - label: "Test"
+    title: "Testing & Iteration"
+    body: "How did you evaluate your prototypes? What feedback did you gather, and what changed as a result?"
+    images:
+      - "/assets/images/project-one/test-1.jpg"
+      - "/assets/images/project-one/test-2.jpg"
+      - "/assets/images/project-one/test-3.jpg"
+      - "/assets/images/project-one/test-4.jpg"
+
+  - label: "Deliver"
+    title: "Final Outcome"
+    body: "What was the final deliverable? Describe the resolved design, the fabrication process, and how it addresses the original brief."
+    images:
+      - "/assets/images/project-one/final-1.jpg"
+      - "/assets/images/project-one/final-2.jpg"
+
+# Documentation gallery images shown below the process diagram (optional)
+# Delete this section if you don't want a gallery
+gallery:
+  - src: "assets/images/project-one/gallery-1.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-2.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-3.jpg"
+    alt: "Description of image"
+
+---
+
+{%- comment -%}
+Anything written below this line renders in the "custom content" slot
+at the bottom of the project page, after the gallery and outcomes.
+Use this for one-off sections unique to this project.
+Leave it empty if you don't need anything extra.
+{%- endcomment -%}

@@ -1,0 +1,97 @@
+---
+# =============================================
+# PROJECT FRONTMATTER
+# Fill in the fields below. The layout handles
+# all the HTML — you only edit this file.
+# =============================================
+
+title: "Bagatelle Machine"
+year: 2026
+role: "Designer · Fabricator"
+materials: "Aluminum, Brass, Springs, Plywood, Sheet Acrylic"       # optional — delete line if not needed
+tools: "FusionCAM, OnShape, CNC Mill, Waterjet, Manual lathe, Laser cutter"         # optional — delete line if not needed
+
+# Short summary shown on the homepage card
+summary: "A week-long exploration of machining techniques"
+
+# Overview paragraph shown at the top of the project page
+overview: "A program-specific project designed to introduce students to a variety of machining and fabrication techniques. Used these techniques to design and fabricate a fully mechanical pinball-like Bagatelle machine."
+
+# Outcomes paragraph shown at the bottom (optional — delete section if not needed)
+outcomes: "This project allowed me to explore a wide range of fabrication techniques I had not previously explored while still allowing me to hone my abilities with techniques I was familiar with. I was also forced to deal with the differences between the ideal world of a CAD design and the constraints of the material world."
+
+# Categories shown in the hero (displayed as "Cat One · Cat Two")
+categories:
+  - Fabrication
+  - CAD
+
+# Tags used for filtering on the homepage
+# Must match the filter button labels in index.html exactly
+tags:
+  - Fabrication
+  - CAD
+
+# Cover image shown on the homepage card (optional)
+cover: "assets/images/project-five/cover.heic"
+
+# Process nodes — each item is one step in the diagram
+# label  : short name on the node (1–2 words)
+# title  : full title in the detail panel
+# body   : description paragraph in the detail panel
+# images : list of image paths (optional — omit if no images for this step)
+nodes:
+  - label: "Background"
+    title: "Background"
+    body: "Students were tasked with designing a functional, hand-held mechanical game based on an existing design. While the outer frame of the machine could not be changed much, we were given the freedom to design any gameplay mechanisms within the frame."
+    images: 
+      - src: "/assets/images/project-five/frame.png"
+        caption: "Spec drawing for frame"
+
+  - label: "Design"
+    title: "Design"
+    body: "Inspired by retro pinball machines, my design would use heavily thematic visuals  to evoke a sense of wonder and interest. The experience would be centered around the spinning orb at the center of the composition. After the ball is shot using the spring-loaded lever mechanism, it would fall inside the spinner and cause it to rotate."
+    images:
+      - src: "/assets/images/project-five/design-sketch.jpg"
+        caption: "Original concept sketch by me"
+
+  - label: "Prototype"
+    title: "Prototyping"
+    body: "All parts were fully modeled in OnShape to prepare for fabrication. After initial fabrication, I spent most of my time ensuring the central spinner would function as intended. The spinners needed to be the perfect size, shape, and smooth movement in order to spin while still allowing the ball to move through the frame."
+    images:
+      - src: "/assets/images/project-five/3d-model.png"
+        caption: "Full CAD model"
+ 
+
+  - label: "Fabrication"
+    title: "Fabrication"
+    body: "A number of fabrication methods were used to complete this project. The base, acrylic spinners, and acrylic top were engraved and cut by laser. The brass pull knob was machined on a manual lathe with high precision in order to fit hardware. The aluminum frame was cut with a water jet and the plastic stars were CNC milled."
+    images:
+      - src: "/assets/images/project-five/cam.png"
+        caption: "CAM programming for stars"
+
+
+  - label: "Deliver"
+    title: "Final Outcome"
+    body: "All metal pieces were carefully polished by hand in order to achieve the glamorous aesthetic fit for the theme. While the final result is visually appealing, I was not fully satisfied with the functionality of the spinner. Future iterations could explore alternative geometries and materials in order to achieve a more engaging playing experience."
+    images:
+      - "/assets/images/project-five/final-1.jpg"
+      - "/assets/images/project-five/final-2.jpg"
+
+# Documentation gallery images shown below the process diagram (optional)
+# Delete this section if you don't want a gallery
+gallery:
+  - src: "assets/images/project-one/gallery-1.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-2.jpg"
+    alt: "Description of image"
+  - src: "assets/images/project-one/gallery-3.jpg"
+    alt: "Description of image"
+
+---
+
+{%- comment -%}
+Anything written below this line renders in the "custom content" slot
+at the bottom of the project page, after the gallery and outcomes.
+Use this for one-off sections unique to this project.
+Leave it empty if you don't need anything extra.
+{%- endcomment -%}

@@ -1,0 +1,213 @@
+---
+layout: base
+---
+
+<div class="container">
+
+  <a href="{{ '/' | relative_url }}" class="back-link">All Projects</a>
+
+  <!-- HERO — populated from frontmatter -->
+  <section class="project-hero">
+    <p class="mono">{{ page.categories | join: ' · ' }}</p>
+    <h1>{{ page.title }}</h1>
+
+    <div class="project-meta">
+      {% if page.year %}
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">{{ page.year }}</span>
+      </div>
+      {% endif %}
+      {% if page.role %}
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">{{ page.role }}</span>
+      </div>
+      {% endif %}
+      {% if page.materials %}
+      <div class="meta-item">
+        <span class="meta-label">Materials</span>
+        <span class="meta-value">{{ page.materials }}</span>
+      </div>
+      {% endif %}
+      {% if page.tools %}
+      <div class="meta-item">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">{{ page.tools }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="project-overview">
+    <div class="overview-text">
+      <p>{{ page.overview }}</p>
+    </div>
+    <div class="overview-tags">
+      {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- PROCESS NODE DIAGRAM -->
+  <section class="process-section">
+    <div class="section-header">
+      <h2>Process</h2>
+      <span class="mono">Select a step to expand</span>
+    </div>
+
+    <div class="node-diagram-wrapper">
+      <div class="node-diagram" id="node-diagram"></div>
+    </div>
+
+    <div class="node-detail-panel" id="detail-panel">
+      <p class="detail-step" id="detail-step"></p>
+      <h3 class="detail-title" id="detail-title"></h3>
+      <p class="detail-body" id="detail-body"></p>
+      <div id="detail-images"></div>
+    </div>
+  </section>
+
+    <!-- OUTCOMES -->
+  {% if page.outcomes %}
+  <section style="padding: var(--space-xl) 0 var(--space-2xl);">
+    <div class="section-header">
+      <h2>Outcomes</h2>
+    </div>
+    <p style="max-width: 640px; line-height: 1.8; color: var(--color-muted); font-size: 0.95rem;">
+      {{ page.outcomes }}
+    </p>
+  </section>
+  {% endif %}
+
+  <!-- IMAGE GALLERY -->
+  {% if page.gallery %}
+  <section>
+    <div class="section-header">
+      <h2>Documentation</h2>
+    </div>
+    <div class="image-gallery">
+      {% for image in page.gallery %}
+        <div class="gallery-item">
+          <img src="{{ image.src }}" alt="{{ image.alt }}" />
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+
+  <!-- CUSTOM CONTENT SLOT -->
+  <!-- Any content written below the frontmatter in a project file
+       renders here. Use this for one-off sections unique to a project. -->
+  {{ content }}
+
+</div><!-- /container -->
+
+<!-- NODE DIAGRAM SCRIPT -->
+<!-- The nodes array is built directly from Jekyll frontmatter.
+     You never need to edit this script — edit the frontmatter instead. -->
+<script>
+  const nodes = [
+    {% for node in page.nodes %}
+    {
+      label:  {{ node.label | jsonify }},
+      title:  {{ node.title | jsonify }},
+      body:   {{ node.body  | jsonify }},
+      {% if node.images %}
+      images: {{ node.images | jsonify }},
+      {% else %}
+      images: []
+      {% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  const diagram      = document.getElementById('node-diagram');
+  const panel        = document.getElementById('detail-panel');
+  const detailStep   = document.getElementById('detail-step');
+  const detailTitle  = document.getElementById('detail-title');
+  const detailBody   = document.getElementById('detail-body');
+  const detailImages = document.getElementById('detail-images');
+
+  let activeIndex = null;
+
+  function buildDiagram() {
+    diagram.innerHTML = '';
+    nodes.forEach((node, i) => {
+      if (i > 0) {
+        const connector = document.createElement('div');
+        connector.className = 'node-connector';
+        connector.innerHTML = '<div class="edge-line"></div>';
+        diagram.appendChild(connector);
+      }
+      const col = document.createElement('div');
+      col.className = 'node-column';
+      const nodeEl = document.createElement('div');
+      nodeEl.className = 'node';
+      nodeEl.dataset.index = i;
+      nodeEl.innerHTML = `
+        <span class="node-number">0${i + 1}</span>
+        <span class="node-label">${node.label}</span>
+      `;
+      nodeEl.addEventListener('click', () => toggleNode(i));
+      col.appendChild(nodeEl);
+      diagram.appendChild(col);
+    });
+  }
+
+  
+ function renderImages(images) {
+  detailImages.innerHTML = '';
+  if (!images || images.length === 0) return;
+  const count = images.length <= 4 ? String(images.length) : 'many';
+  detailImages.className = 'detail-images';
+  detailImages.setAttribute('data-count', count);
+  images.forEach(item => {
+    const src     = typeof item === 'string' ? item : item.src;
+    const caption = typeof item === 'string' ? null  : item.caption;
+    const wrap = document.createElement('div');
+    wrap.className = 'detail-img-wrap';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = caption || '';
+    img.loading = 'lazy';
+    wrap.appendChild(img);
+    if (caption) {
+      const cap = document.createElement('div');
+      cap.className = 'img-caption';
+      cap.textContent = caption;
+      wrap.appendChild(cap);
+    }
+    detailImages.appendChild(wrap);
+  });
+}
+
+  function toggleNode(index) {
+    const nodeEls = diagram.querySelectorAll('.node');
+    const edgeEls = diagram.querySelectorAll('.node-connector');
+
+    if (activeIndex === index) {
+      nodeEls[index].classList.remove('active');
+      panel.classList.remove('visible');
+      activeIndex = null;
+      edgeEls.forEach(e => e.classList.remove('active'));
+    } else {
+      if (activeIndex !== null) nodeEls[activeIndex].classList.remove('active');
+      nodeEls[index].classList.add('active');
+      activeIndex = index;
+      edgeEls.forEach((e, i) => e.classList.toggle('active', i < index));
+      const step = nodes[index];
+      detailStep.textContent  = `Step 0${index + 1}`;
+      detailTitle.textContent = step.title;
+      detailBody.textContent  = step.body;
+      renderImages(step.images);
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  buildDiagram();
+</script>
