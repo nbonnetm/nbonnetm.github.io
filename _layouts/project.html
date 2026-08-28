@@ -104,7 +104,14 @@ layout: base
   <!-- Any content written below the frontmatter in a project file
        renders here. Use this for one-off sections unique to a project. -->
   {{ content }}
-
+<!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <div class="lightbox-inner">
+      <img id="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
 </div><!-- /container -->
 
 <!-- NODE DIAGRAM SCRIPT -->
@@ -183,8 +190,37 @@ layout: base
       wrap.appendChild(cap);
     }
     detailImages.appendChild(wrap);
+    wrap.addEventListener('click', () => openLightbox(src, caption));
   });
 }
+
+// --- LIGHTBOX ---
+const lightbox      = document.getElementById('lightbox');
+const lightboxImg   = document.getElementById('lightbox-img');
+const lightboxCap   = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, caption) {
+  lightboxImg.src = src;
+  lightboxCap.textContent = caption || '';
+  lightbox.classList.add('visible');
+  document.body.style.overflow = 'hidden'; // prevent background scrolling
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('visible');
+  document.body.style.overflow = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox(); // click outside image to close
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
 
   function toggleNode(index) {
     const nodeEls = diagram.querySelectorAll('.node');

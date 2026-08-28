@@ -8,18 +8,17 @@
 title: "'Curioso' Belt Buckle"
 year: 2022
 role: "Designer · Fabricator"
-materials: "Bronze, Rhodium Plating, Brass Rivets"       # optional — delete line if not needed
-tools: "SolidWorks, FDM 3D Printing, Silicone Molding, Wax Injection"         # optional — delete line if not needed
+materials: "Bronze, Rhodium plating, Brass rivets"       # optional — delete line if not needed
+tools: "SolidWorks, FDM 3D printing, Silicone molding, Wax injection"         # optional — delete line if not needed
 
 # Short summary shown on the homepage card
-summary: "Put a nice summary here."
+summary: ""
 
 # Overview paragraph shown at the top of the project page
-overview: "This project explores how the form of a functional mechanism can give rise to visual intrigue through modification. This version serves as
-          an initial prototype for a design intended for larger-scale production."
+overview: "An exploration of pareidolia, the human tendency to recognize faces in inanimate objects, in the mechanisms of tools we interact with every day. What began as a simple learning exercise transformed into one of the first pieces where I explored this concept of misplaced anthropomorphization of tools."
 
 # Outcomes paragraph shown at the bottom (optional — delete section if not needed)
-outcomes: "Describe the results, what you learned, what you would do differently, or where the project could go next."
+outcomes: "TODO"
 
 # Categories shown in the hero (displayed as "Cat One · Cat Two")
 categories:
@@ -42,47 +41,59 @@ cover: "assets/images/project-one/cover.png"
 # body   : description paragraph in the detail panel
 # images : list of image paths (optional — omit if no images for this step)
 nodes:
-  - label: "Research"
-    title: "Research & Discovery"
-    body: "Describe what the research phase involved — user studies, literature review, competitive analysis, site visits, interviews, or precedent research. What questions were you trying to answer?"
+  - label: "Idea"
+    title: "Idea/concept"
+    body: "This project began as an exercise for working with assemblies in SolidWorks. I had recently come across a belt buckle mechanism that I found to intriguingly resemble a human face."
+    images: 
+    - src: "/assets/images/project-one/idea-1.jpg"
+      caption: "Original inspiration"
+  
   - label: "Define"
     title: "Problem Definition"
-    body: "How did you synthesize your research into a clear problem statement or design brief? What constraints, requirements, or opportunities shaped the direction?"
+    body: "Since the original model for this buckle was created as an exercise while learning the basics of CAD modeling, I needed to restart my approach from scratch. The original model was large and unwieldy, not to mention I had failed to account for fit tolerances."
     images:
-      - "/assets/images/project-one/define-1.png"
+      - src: "/assets/images/project-one/define-1.png"
+        caption: "Original model from previous year"
 
   - label: "Ideate"
     title: "Ideation"
-    body: "Describe your ideation process — sketching, brainstorming, concept generation. How many directions did you explore, and how did you narrow them down?"
+    body: "I began iterating ways to better incorporate face-like features into my design while ensuring it could still function. To determine how the geometry of my design might interface with the human hand, I experimented with different sizes, curves, and placements for the toggling mechanism."
     images:
-      - "/assets/images/project-one/ideation-1.jpg"
-      - "/assets/images/project-one/ideation-2.jpg"
+      - src: "/assets/images/project-one/ideation-1.jpg"
+        caption: "Concept sketches"
+      - src: "/assets/images/project-one/ideation-2.jpg"
+        caption: "Orthographic sketches of two candidate designs"
 
   - label: "Prototype"
     title: "Prototyping"
-    body: "What prototyping methods did you use? What were you trying to test or validate at each fidelity level?"
+    body: "Using the orthographic drawings, I created a new CAD document for this design. I 3D printed multiple versions of the design to test with different springs, tolerances, and geometries before printing the design using a high-fidelity FDM printer."
     images:
       - src: "/assets/images/project-one/prototype-1.png"
         caption: "3D model of second prototype"
-      - "/assets/images/project-one/prototype-2.jpg"
+      - src: "/assets/images/project-one/prototype-4.png"
+        caption: "Exploded view of final model"
       - src: "/assets/images/project-one/prototype-3.png"
         caption: "High-fidelity 3D print of final model"
 
-  - label: "Test"
-    title: "Testing & Iteration"
-    body: "How did you evaluate your prototypes? What feedback did you gather, and what changed as a result?"
+  - label: "Fabrication"
+    title: "Fabrication"
+    body: "The 3D print was then used to create a silicone mold, after which it was prepped for wax injection. Once a wax positive was ready, it was sent to a local foundry to be cast in bronze. After receiving the parts, I noticed the fit between parts had changed due to shrinkage from the casting process. I filed the parts down to fit, after which I sanded and polished them to prep for rhodium electroplating."
     images:
-      - "/assets/images/project-one/test-1.jpg"
-      - "/assets/images/project-one/test-2.jpg"
-      - "/assets/images/project-one/test-3.jpg"
-      - "/assets/images/project-one/test-4.jpg"
+      - src: "/assets/images/project-one/fab-1.png"
+        caption: "Silicone mold"
+      - src: "/assets/images/project-one/fab-2.jpg"
+        caption: "Bronze cast"
+      - src: "/assets/images/project-one/fab-3.jpg"
+        caption: "Filing and finishing"
 
   - label: "Deliver"
     title: "Final Outcome"
-    body: "What was the final deliverable? Describe the resolved design, the fabrication process, and how it addresses the original brief."
+    body: "While the final result was stunning to look at, it unfortunately did not function as well as intended. Necessary post-processing makes this mode of fabrication unsuitable for larger-scale production. Next step is to redesign for CNC milling, which would allow for better control of fit and tolerance."
     images:
-      - "/assets/images/project-one/final-1.jpg"
-      - "/assets/images/project-one/final-2.jpg"
+      - src: "/assets/images/project-one/final-1.png"
+        caption: "Finished prototype for new design"
+      - src: "/assets/images/project-one/final-2.jpg"
+        caption: "Detail shot of rivets"
 
 # Documentation gallery images shown below the process diagram (optional)
 # Delete this section if you don't want a gallery
