@@ -104,19 +104,18 @@ layout: base
   <!-- Any content written below the frontmatter in a project file
        renders here. Use this for one-off sections unique to a project. -->
   {{ content }}
-<!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightbox-close">✕</button>
-    <div class="lightbox-inner">
-      <img id="lightbox-img" src="" alt="" />
-      <p class="lightbox-caption" id="lightbox-caption"></p>
-    </div>
-  </div>
 </div><!-- /container -->
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</div>
+
 <!-- NODE DIAGRAM SCRIPT -->
-<!-- The nodes array is built directly from Jekyll frontmatter.
-     You never need to edit this script — edit the frontmatter instead. -->
 <script>
   const nodes = [
     {% for node in page.nodes %}
